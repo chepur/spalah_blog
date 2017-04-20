@@ -1,0 +1,12 @@
+RVM workflow for a new Rails app
+# create and use the new RVM gemset
+$ rvm use --create 1.9.3@awesome_rails_project
+
+# install rails into the blank gemset
+$ gem install rails
+
+# generate the new rails project
+$ rails new awesome_rails_project
+
+# go into the new project directory and create both .ruby-version and .ruby-gemset:
+rvm --ruby-version use 1.9.3@my_app
