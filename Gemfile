@@ -39,7 +39,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'kaminari'
+
+gem 'kaminari' # Pagination
+gem 'carrierwave', '~> 1.0' # File uploader
+gem 'mini_magick' # For different versions of an image
 
 
 group :development, :test do
