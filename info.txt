@@ -12,4 +12,4 @@ $ rails new awesome_rails_project
 rvm --ruby-version use 1.9.3@my_app
 
 #lesson 17 devise
-#lesson 18 add images
+#lesson 18 add images https://youtu.be/krlo2Wi5hRA?t=2098

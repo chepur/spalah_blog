@@ -5,17 +5,42 @@
     <p>
       <%= @post.content %>
     </p>
-    <br>
-    <%= image_tag(@post.image_url(:thumb).to_s) if @post.image? %>
-    <br>
+
+    <div id="carousel-example-generic" class="carousel slide <%= 'hidden' unless @post.images.any? %>" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <% @post.images.each_with_index do |image, index| %>
+            <div class="item <%= 'active' if index == 0 %>">
+              <%= image_tag(image.file.url) %>
+            </div>
+        <% end %>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
     <br>
     <%= link_to 'Edit', edit_post_path(@post) %> |
     <%= link_to 'Delete it', post_path(@post),
                 method: :delete,
                 data: {confirm: 'Are you sure?'} %>
     <br>
-    <%= link_to 'Go Back', posts_path %>
+    <%= link_to '<< Go Back', posts_path %>
   </div>
   <br>
 </div>
-

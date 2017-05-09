@@ -2,14 +2,6 @@
     <%= f.text_field :title %>
     <%= f.text_area :content, rows: 15 %>
     <br>
-    <%= image_tag(@post.image_url(:thumb).to_s) if @post.image? %>
-    <br>
-    <br>
-    <%= f.file_field :image, class: 'field' %>
-    <%= f.hidden_field :image_cache %>
-    <% if @post.image? %>
-        <p><%= f.check_box :remove_image %></p>
-    <% end %>
     <br>
     <%= f.submit class: 'btn btn-success center-block' %>
 <% end %>

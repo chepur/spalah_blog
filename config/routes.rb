@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
 
-  resources 'posts', concerns: :paginatable
+  resources :posts, concerns: :paginatable do
+    resources :images
+  end
 
 end

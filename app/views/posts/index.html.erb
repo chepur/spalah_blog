@@ -2,9 +2,9 @@
   <div class="row">
     <p><%= link_to 'Write post', new_post_path, class: "bt btn-primary btn-lg" %></p>
     <h1 class="text-center">Listing posts</h1>
+
     <% @posts.each do |p| %>
         <h3><%= p.title %></h3>
-        <%= image_tag(p.image_url(:thumb).to_s) %>
         <br>
         <%= link_to 'Read', post_path(p) %> |
         <%= link_to 'Edit', edit_post_path(p) %> |
@@ -15,8 +15,8 @@
         <br>
     <% end %>
     <br>
-    <div class="col-md-8 col-md-offset-4">
 
+    <div class="col-md-8 col-md-offset-4">
       <%= paginate @posts %>
     </div>
   </div>
